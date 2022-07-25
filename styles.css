@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(201, 198, 198);
+}
+
+#game-container {
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.square {
+    background-color: white;
+    border: solid;
+    border-color: black;
+}
