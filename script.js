@@ -1,34 +1,34 @@
-const gameBoard = (() => {
-    let board = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'];
+const Gameboard = (() => {
+    let board = ['X', 'O', 'X', 
+                'O', 'X', 'O', 
+                'X', 'O', 'X'];
 
     return { board }
 })();
 
-const player = (name) => {
-    return { name }
+const Player = (name, marker) => {
+    return { name, marker }
 };
 
-const gameFlow = () => {
 
-};
 
-const playerX = player('X');
-const playerO = player('O');
+const gameFlow = (() => {
+    let playerOne = Player('One', 'X');
+    let playerTwo = Player('Two', 'O');
+
+    return {playerOne, playerTwo}
+
+})();
 
 // create div container
 
 const gameContainer = document.querySelector('#game-container');
-
-let counter = 1
+let counter = 0
 for (i = 0; i < 9; i++) {
     const gameSquare = document.createElement('div');
     gameSquare.className = 'square';
     gameContainer.appendChild(gameSquare);
     gameSquare.id = counter;
     counter++;
+    gameSquare.textContent = Gameboard.board[i];
 }
-
-
-
-
-
