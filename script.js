@@ -5,12 +5,12 @@ const Gameboard = (() => {
     const gameContainer = document.querySelector('#game-container');
     let counter = 0
     for (i = 0; i < 9; i++) {
-        const gameSquare = document.createElement('div');
-        gameSquare.className = 'square';
-        gameContainer.appendChild(gameSquare);
-        gameSquare.id = counter;
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        gameContainer.appendChild(cell);
+        cell.id = counter;
         counter++;
-        gameSquare.textContent = board[i];
+        cell.textContent = board[i];
     }
 
     return { board }
@@ -24,6 +24,10 @@ const Game = (() => {
     let playerOne = Player('One', 'X');
     let playerTwo = Player('Two', 'O');
     let currentPlayer = playerOne;
+
+    
+
+
 
     return {playerOne, playerTwo, currentPlayer}
 
