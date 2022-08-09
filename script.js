@@ -28,15 +28,12 @@ const Game = (() => {
 
     cell.forEach((cell) => {
         cell.addEventListener('click', () => {
-            let cellID = cell.id;
-            let index = cellID;
+            let chosenCell = cell.id;
 
-            console.log(index);
-            Gameboard.board.splice(index, 1, currentPlayer.marker);
-
-
+            Gameboard.board.splice(chosenCell, 1, currentPlayer.marker);
             console.log(Gameboard.board);
-            return index;
+
+            return chosenCell;
         })
     });
 
