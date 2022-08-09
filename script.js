@@ -32,6 +32,12 @@ const Game = (() => {
 
             Gameboard.board.splice(chosenCell, 1, currentPlayer.marker);
             console.log(Gameboard.board);
+            
+            if (currentPlayer === playerOne) {
+                currentPlayer = playerTwo;
+            } else if (currentPlayer === playerTwo) {
+                currentPlayer = playerOne;
+            }
 
             return chosenCell;
         })
