@@ -39,7 +39,7 @@ const Game = (() => {
                     currentPlayer = playerOne;
                 }
             } else {
-                alert('That spot has already been taken!');
+                alert('That spot has already been taken! Try another spot.');
             }
 
             return chosenCell;
