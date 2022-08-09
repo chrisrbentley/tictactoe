@@ -30,13 +30,16 @@ const Game = (() => {
         cell.addEventListener('click', () => {
             let chosenCell = cell.id;
 
-            Gameboard.board.splice(chosenCell, 1, currentPlayer.marker);
-            console.log(Gameboard.board);
-            
-            if (currentPlayer === playerOne) {
-                currentPlayer = playerTwo;
-            } else if (currentPlayer === playerTwo) {
-                currentPlayer = playerOne;
+            if (Gameboard.board[chosenCell] === '') {
+                Gameboard.board.splice(chosenCell, 1, currentPlayer.marker);
+                console.log(Gameboard.board);
+                if (currentPlayer === playerOne) {
+                    currentPlayer = playerTwo;
+                } else if (currentPlayer === playerTwo) {
+                    currentPlayer = playerOne;
+                }
+            } else {
+                alert('That spot has already been taken!');
             }
 
             return chosenCell;
