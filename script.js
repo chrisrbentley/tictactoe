@@ -33,19 +33,27 @@ const Game = (() => {
             if (Gameboard.board[chosenCell] === '') {
                 Gameboard.board.splice(chosenCell, 1, currentPlayer.marker);
                 console.log(Gameboard.board);
+
+                const displayController = (() => {
+                    for (i = 0; i < 9; i++) {
+                        cell.textContent = currentPlayer.marker;
+                    }
+                })();
+                
                 if (currentPlayer === playerOne) {
                     currentPlayer = playerTwo;
                 } else if (currentPlayer === playerTwo) {
                     currentPlayer = playerOne;
                 }
+                
+                return displayController
             } else {
                 alert('That spot has already been taken! Try another spot.');
             }
 
-            return chosenCell;
+            return { chosenCell };
         })
     });
 
     return { playerOne, playerTwo, currentPlayer }
-
 })();
