@@ -10,9 +10,8 @@ const Gameboard = (() => {
         gameContainer.appendChild(cell);
         cell.id = counter;
         counter++;
-        cell.textContent = board[i];
     }
-
+    
     return { board }
 })();
 
@@ -36,7 +35,7 @@ const Game = (() => {
 
                 const displayController = (() => {
                     for (i = 0; i < 9; i++) {
-                        cell.textContent = currentPlayer.marker;
+                        cell.textContent = Gameboard.board[chosenCell];
                     }
                 })();
                 
