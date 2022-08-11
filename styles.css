@@ -7,10 +7,16 @@ body {
     width: 500px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    position: relative;
 }
 
 .cell {
     background-color: white;
     border: solid;
     border-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
 }
