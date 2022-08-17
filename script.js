@@ -57,6 +57,7 @@ const Game = (() => {
                             body.appendChild(result);
                             result.textContent = 'Player One wins!';
                             const restartBtn = document.createElement('button');
+                            restartBtn.id = 'restartBtn';
                             body.appendChild(restartBtn);
                             gameOver = true;
                             restartBtn.textContent = 'Play again';
@@ -87,6 +88,7 @@ const Game = (() => {
                         body.appendChild(result);
                         result.textContent = 'Player Two wins!';
                         const restartBtn = document.createElement('button');
+                        restartBtn.id = 'restartBtn';
                         body.appendChild(restartBtn);
                         gameOver = true;
                         restartBtn.textContent = 'Play again';
@@ -110,6 +112,7 @@ const Game = (() => {
                         body.appendChild(result);
                         result.textContent = 'It\'s a tie!';
                         const restartBtn = document.createElement('button');
+                        restartBtn.id = 'restartBtn';
                         body.appendChild(restartBtn);
                         gameOver = true;
                         restartBtn.textContent = 'Play again';

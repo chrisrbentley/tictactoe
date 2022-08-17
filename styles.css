@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(201, 198, 198);
+    background-color: rgb(246, 240, 229);
+
 }
 
 #game-container {
@@ -7,16 +8,21 @@ body {
     width: 500px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin: 0 auto;
     position: relative;
 }
 
 .cell {
-    background-color: white;
-    border: solid;
-    border-color: black;
+    background-color: rgb(246, 230, 199);
+    /*border: solid;
+    border-color: black;*/
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 42px;
+}
+
+#restartBtn {
+    background-color: rgb(246, 240, 229);
 }
