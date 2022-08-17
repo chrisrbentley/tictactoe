@@ -124,13 +124,16 @@ const Game = (() => {
                 }
                 checkWinner();
                 
-                if (currentPlayer === playerOne) {
-                    currentPlayer = playerTwo;
-                } else if (currentPlayer === playerTwo) {
-                    currentPlayer = playerOne;
-                }
+                const switchPlayer =(() => {
+                    if (currentPlayer === playerOne) {
+                        currentPlayer = playerTwo;
+                    } else if (currentPlayer === playerTwo) {
+                        currentPlayer = playerOne;
+                    }
+                })()
                 
-                return { displayController }
+                
+                return { displayController, switchPlayer }
             } else {
                 alert('That spot has already been taken! Try another spot.');
             }
