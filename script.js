@@ -24,6 +24,7 @@ const Game = (() => {
     let playerTwo = Player('Two', 'O');
     let currentPlayer = playerOne;
     let cell = document.querySelectorAll('.cell');
+    let gameOver = false;
     const body = document.querySelector('#body');
 
 
@@ -31,7 +32,7 @@ const Game = (() => {
         cell.addEventListener('click', () => {
             let chosenCell = cell.id;
 
-            if (Gameboard.board[chosenCell] === '') {
+            if (gameOver === false && Gameboard.board[chosenCell] === '') {
                 Gameboard.board.splice(chosenCell, 1, currentPlayer.marker);
                 console.log(Gameboard.board);
 
@@ -57,6 +58,7 @@ const Game = (() => {
                             result.textContent = 'Player One wins!';
                             const restartBtn = document.createElement('button');
                             body.appendChild(restartBtn);
+                            gameOver = true;
                             restartBtn.textContent = 'Play again';
 
                             restartBtn.addEventListener('click', () => {
@@ -66,6 +68,7 @@ const Game = (() => {
                                 })
                                 restartBtn.remove();
                                 result.remove();
+                                gameOver = false;
                                 currentPlayer = playerOne;
                             });
 
@@ -85,6 +88,7 @@ const Game = (() => {
                         result.textContent = 'Player Two wins!';
                         const restartBtn = document.createElement('button');
                         body.appendChild(restartBtn);
+                        gameOver = true;
                         restartBtn.textContent = 'Play again';
 
                         restartBtn.addEventListener('click', () => {
@@ -94,6 +98,7 @@ const Game = (() => {
                                 })
                                 restartBtn.remove();
                                 result.remove();
+                                gameOver = false;
                                 currentPlayer = playerOne;
                             });
 
@@ -106,6 +111,7 @@ const Game = (() => {
                         result.textContent = 'It\'s a tie!';
                         const restartBtn = document.createElement('button');
                         body.appendChild(restartBtn);
+                        gameOver = true;
                         restartBtn.textContent = 'Play again';
                         
                         restartBtn.addEventListener('click', () => {
@@ -115,6 +121,7 @@ const Game = (() => {
                             })
                             restartBtn.remove();
                             result.remove();
+                            gameOver = false;
                             currentPlayer = playerOne;
                         });
                     }
@@ -131,7 +138,7 @@ const Game = (() => {
                 
                 
                 return { displayController, switchPlayer }
-            } else {
+            } else if (gameOver === false && Gameboard.board[chosenCell] != '') {
                 alert('That spot has already been taken! Try another spot.');
             }
 
