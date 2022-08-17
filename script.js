@@ -61,7 +61,6 @@ const Game = (() => {
 
                             restartBtn.addEventListener('click', () => {
                                 Gameboard.board.fill('');
-                                console.log('111');
                                 document.querySelectorAll('.cell').forEach(cell => {
                                     cell.textContent = Gameboard.board[i];
                                 })
@@ -90,7 +89,6 @@ const Game = (() => {
 
                         restartBtn.addEventListener('click', () => {
                                 Gameboard.board.fill('');
-                                console.log('111');
                                 document.querySelectorAll('.cell').forEach(cell => {
                                     cell.textContent = Gameboard.board[i];
                                 })
@@ -112,7 +110,6 @@ const Game = (() => {
                         
                         restartBtn.addEventListener('click', () => {
                             Gameboard.board.fill('');
-                            console.log('111');
                             document.querySelectorAll('.cell').forEach(cell => {
                                 cell.textContent = Gameboard.board[i];
                             })
