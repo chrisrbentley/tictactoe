@@ -53,12 +53,15 @@ const Game = (() => {
                         Gameboard.board[2] === 'X' && Gameboard.board[4] === 'X' && Gameboard.board[6] === 'X') {
 
                             console.log('Player One wins!');
+                            const resultDiv = document.createElement('div');
                             const result = document.createElement('p');
-                            body.appendChild(result);
-                            result.textContent = 'Player One wins!';
                             const restartBtn = document.createElement('button');
+                            resultDiv.id = 'result-div';
+                            body.appendChild(resultDiv);
+                            resultDiv.appendChild(result);
+                            result.textContent = 'Player One wins!';
                             restartBtn.id = 'restartBtn';
-                            body.appendChild(restartBtn);
+                            resultDiv.appendChild(restartBtn);
                             gameOver = true;
                             restartBtn.textContent = 'Play again';
 
@@ -67,6 +70,7 @@ const Game = (() => {
                                 document.querySelectorAll('.cell').forEach(cell => {
                                     cell.textContent = Gameboard.board[i];
                                 })
+                                resultDiv.remove();
                                 restartBtn.remove();
                                 result.remove();
                                 gameOver = false;
@@ -83,13 +87,16 @@ const Game = (() => {
                     Gameboard.board[2] === 'O' && Gameboard.board[4] === 'O' && Gameboard.board[6] === 'O') {
 
                         console.log('Player Two wins!');
+                        const resultDiv = document.createElement('div');
                         const result = document.createElement('p');
                         const body = document.querySelector('#body');
-                        body.appendChild(result);
+                        resultDiv.id = 'result-div';
+                        body.appendChild(resultDiv);
+                        resultDiv.appendChild(result);
                         result.textContent = 'Player Two wins!';
                         const restartBtn = document.createElement('button');
                         restartBtn.id = 'restartBtn';
-                        body.appendChild(restartBtn);
+                        resultDiv.appendChild(restartBtn);
                         gameOver = true;
                         restartBtn.textContent = 'Play again';
 
@@ -98,6 +105,7 @@ const Game = (() => {
                                 document.querySelectorAll('.cell').forEach(cell => {
                                     cell.textContent = Gameboard.board[i];
                                 })
+                                resultDiv.remove();
                                 restartBtn.remove();
                                 result.remove();
                                 gameOver = false;
@@ -108,12 +116,16 @@ const Game = (() => {
                     && Gameboard.board[3] != '' && Gameboard.board[4] != '' && Gameboard.board[5] != '' 
                     && Gameboard.board[6] != '' && Gameboard.board[7] != '' && Gameboard.board[8] != '') {
                         console.log('It\'s a tie!');
+                        const resultDiv = document.createElement('div');
                         const result = document.createElement('p');
-                        body.appendChild(result);
+                        const body = document.querySelector('#body');
+                        resultDiv.id = 'result-div';
+                        body.appendChild(resultDiv);
+                        resultDiv.appendChild(result);
                         result.textContent = 'It\'s a tie!';
                         const restartBtn = document.createElement('button');
                         restartBtn.id = 'restartBtn';
-                        body.appendChild(restartBtn);
+                        resultDiv.appendChild(restartBtn);
                         gameOver = true;
                         restartBtn.textContent = 'Play again';
                         
@@ -122,6 +134,7 @@ const Game = (() => {
                             document.querySelectorAll('.cell').forEach(cell => {
                                 cell.textContent = Gameboard.board[i];
                             })
+                            resultDiv.remove();
                             restartBtn.remove();
                             result.remove();
                             gameOver = false;
