@@ -34,7 +34,6 @@ const Game = (() => {
 
             if (gameOver === false && Gameboard.board[chosenCell] === '') {
                 Gameboard.board.splice(chosenCell, 1, currentPlayer.marker);
-                console.log(Gameboard.board);
 
                 const displayController = (() => {
                     for (i = 0; i < 9; i++) {
@@ -52,7 +51,6 @@ const Game = (() => {
                         Gameboard.board[0] === 'X' && Gameboard.board[4] === 'X' && Gameboard.board[8] === 'X' ||
                         Gameboard.board[2] === 'X' && Gameboard.board[4] === 'X' && Gameboard.board[6] === 'X') {
 
-                            console.log('Player One wins!');
                             const resultDiv = document.createElement('div');
                             const result = document.createElement('p');
                             const restartBtn = document.createElement('button');
@@ -86,7 +84,6 @@ const Game = (() => {
                     Gameboard.board[0] === 'O' && Gameboard.board[4] === 'O' && Gameboard.board[8] === 'O' ||
                     Gameboard.board[2] === 'O' && Gameboard.board[4] === 'O' && Gameboard.board[6] === 'O') {
 
-                        console.log('Player Two wins!');
                         const resultDiv = document.createElement('div');
                         const result = document.createElement('p');
                         const body = document.querySelector('#body');
@@ -115,7 +112,6 @@ const Game = (() => {
                     } else if (Gameboard.board[0] != '' && Gameboard.board[1] != '' && Gameboard.board[2] != '' 
                     && Gameboard.board[3] != '' && Gameboard.board[4] != '' && Gameboard.board[5] != '' 
                     && Gameboard.board[6] != '' && Gameboard.board[7] != '' && Gameboard.board[8] != '') {
-                        console.log('It\'s a tie!');
                         const resultDiv = document.createElement('div');
                         const result = document.createElement('p');
                         const body = document.querySelector('#body');
