@@ -31,13 +31,13 @@ body {
 
 .cell {
     background-color: rgb(246, 230, 199);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     font-size: 42px;
-    max-height: 100%;
-    max-width: 100%;
-    padding: 0;
+    height: 116px;
+    width: 116px;
+    text-align: center;
+    line-height: 116px;
+    padding: 0px;
 }   
 
 #result-div {
