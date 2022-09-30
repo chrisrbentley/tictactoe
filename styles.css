@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+#favicon {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     background-color: rgb(246, 240, 229);
     display: flex;
